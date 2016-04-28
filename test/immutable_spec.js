@@ -50,19 +50,19 @@ describe('immutability', () => {
     }
 
     it('is immutable', () => {
-      const state = Map({
+      const state = new Map({
         movies: List.of('Trainspotting', '28 Days Later')
       });
       const nextState = addMovie(state, 'Sunshine');
 
-      expect(nextState).to.equal(Map({
+      expect(nextState).to.equal(new Map({
         movies: List.of(
           'Trainspotting',
           '28 Days Later',
           'Sunshine'
         )
       }));
-      expect(state).to.equal(Map({
+      expect(state).to.equal(new Map({
         movies: List.of(
           'Trainspotting',
           '28 Days Later'

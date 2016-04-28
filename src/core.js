@@ -20,7 +20,8 @@ export function setEntries(state, entries) {
   return state.set('entries', List(entries));
 }
 
-export function next(state) {
+export function next
+(state) {
   const entries = state.get('entries').concat(getWinners(state.get('vote')));
 
   if (entries.size === 1) {
@@ -42,3 +43,5 @@ export function vote(state, entry) {
     tally => tally + 1
   );
 }
+
+export const INITIAL_STATE = Map();
